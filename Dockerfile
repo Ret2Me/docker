@@ -28,7 +28,7 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -
   && bash ~/miniconda.sh -b -p ~/miniconda && rm ~/miniconda.sh
 
 # Install pip, numpy, scipy, xeus-cling, jupyter, and pyvista. Afterwards, install ipyvtk-simple.
-RUN conda install -c conda-forge pip numpy scipy xeus-cling jupyterlab pyvista nodejs \
+RUN conda install -y -c conda-forge pip numpy scipy xeus-cling jupyterlab pyvista nodejs \
   && pip install --no-cache-dir ipyvtk-simple itkwidgets && conda clean --all -f -y
 
 # Add necessary extensions for interactive output to Jupyter Lab.
